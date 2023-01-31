@@ -1,0 +1,6 @@
+**/.terraform
+*.tfstate*
+aws_ssm
+aws_ssm.pub
+.terraform*
+SessionManagerPlugin*
