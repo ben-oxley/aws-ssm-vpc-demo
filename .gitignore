@@ -1,6 +1,5 @@
 **/.terraform
 *.tfstate*
-aws_ssm
-aws_ssm.pub
+*.pem*
 .terraform*
 SessionManagerPlugin*

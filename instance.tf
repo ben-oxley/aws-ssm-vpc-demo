@@ -3,7 +3,7 @@
 #generate with ssh-keygen -m PEM
 resource "aws_key_pair" "ITKey" {
   key_name   = "kd"
-  public_key = file("ec2_instance_key.pub")
+  public_key = file("ec2_instance_key.pem.pub")
 }
 
 data "template_file" "startup" {

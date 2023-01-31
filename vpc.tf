@@ -6,12 +6,6 @@ provider "aws" {
 locals {
   name   = "ex-${replace(basename(path.cwd), "_", "-")}"
   region = "eu-west-2"
-
-  tags = {
-    Example    = local.name
-    GithubRepo = "terraform-aws-vpc"
-    GithubOrg  = "terraform-aws-modules"
-  }
 }
 
 ################################################################################
@@ -30,10 +24,4 @@ module "vpc" {
 
   enable_nat_gateway = true
   single_nat_gateway = true
-
-  tags = local.tags
-
-  vpc_tags = {
-    Name = "vpc-name"
-  }
 }

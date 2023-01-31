@@ -1,7 +1,7 @@
 Generate a public/private keypair
 
 ```
-ssh-keygen -m PEM -f ec2_instance_key
+ssh-keygen -m PEM -f ec2_instance_key.pem
 ```
 
 ```
