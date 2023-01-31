@@ -3,7 +3,7 @@
 #generate with ssh-keygen -m PEM
 resource "aws_key_pair" "ITKey" {
   key_name   = "kd"
-  public_key = file("aws_ssm.pub")
+  public_key = file("ec2_instance_key.pub")
 }
 
 data "template_file" "startup" {
@@ -51,6 +51,9 @@ resource "aws_security_group" "allow_web" {
 } #security group ends here
 
 resource "aws_instance" "ec2" {
+  depends_on = [
+    module.vpc
+  ]
   ami                    = "ami-0d09654d0a20d3ae2"
   instance_type          = "t3.nano"
   subnet_id              = module.vpc.private_subnets[0]
